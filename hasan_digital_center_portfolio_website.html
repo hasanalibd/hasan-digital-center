@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>হাসান ডিজিটাল সেন্টার | Hasan Ali - Online & Computer Services</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Hind Siliguri (Bengali) & Inter (English) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Hind Siliguri"', '"Inter"', 'sans-serif'],
+                        en: ['"Inter"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-blue-600 selection:text-white">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <!-- Logo / Brand Name -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 md:w-11 md:h-11 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white shadow-lg shadow-blue-600/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-laptop-code text-lg md:text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="block text-lg md:text-xl font-bold text-slate-900 dark:text-white leading-tight">হাসান ডিজিটাল সেন্টার</span>
+                        <span class="block text-xs font-en font-medium text-blue-600 dark:text-blue-400 tracking-wide">Hasan Digital Center</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-8 text-base font-medium">
+                    <a href="#home" class="text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 transition-colors">হোম</a>
+                    <a href="#about" class="text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 transition-colors">আমার সম্পর্কে</a>
+                    <a href="#services" class="text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 transition-colors">সেবাসমূহ</a>
+                    <a href="#why-us" class="text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 transition-colors">কেন আমরা সেরা</a>
+                    <a href="#contact" class="text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 transition-colors">যোগাযোগ</a>
+                </nav>
+
+                <!-- Right Actions: Theme Toggle & WhatsApp CTA -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <button id="theme-toggle" aria-label="Toggle Dark Mode" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                        <i id="theme-icon" class="fa-solid fa-moon text-base"></i>
+                    </button>
+
+                    <a href="https://wa.me/8801850030472?text=আসসালামু%20আলাইকুম%20হাসান%20ভাই,%20আমি%20একটি%20অনলাইন%20সার্ভিস%20নিতে%20চাই।" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-md shadow-emerald-600/20 transition-all hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp মেসেজ</span>
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" aria-label="Open Menu" class="md:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-5 space-y-2">
+            <a href="#home" class="mobile-link block px-4 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">হোম</a>
+            <a href="#about" class="mobile-link block px-4 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">আমার সম্পর্কে</a>
+            <a href="#services" class="mobile-link block px-4 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">সেবাসমূহ</a>
+            <a href="#why-us" class="mobile-link block px-4 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">কেন আমরা সেরা</a>
+            <a href="#contact" class="mobile-link block px-4 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">যোগাযোগ</a>
+            <div class="pt-2">
+                <a href="https://wa.me/8801850030472?text=আসসালামু%20আলাইকুম%20হাসান%20ভাই,%20আমি%20একটি%20অনলাইন%20সার্ভিস%20নিতে%20চাই।" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-emerald-600 text-white font-semibold">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>WhatsApp-এ যোগাযোগ করুন</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-28">
+        <!-- Decorative Background Gradients -->
+        <div class="absolute inset-0 -z-10 overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl"></div>
+            <div class="absolute top-1/2 -left-24 w-80 h-80 rounded-full bg-indigo-500/10 blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Text Column -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 text-sm font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                        <span>কম্পিউটার ও অনলাইন ভিত্তিক সকল ডিজিটাল সেবা</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
+                        স্বাগতম <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">হাসান ডিজিটাল সেন্টারে</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        আমি <strong class="text-slate-900 dark:text-white font-semibold">হাসান আলী (Hasan Ali)</strong> — হাসান ডিজিটাল সেন্টারের স্বত্বাধিকারী। চাকরির আবেদন, সরকারি ও বেসরকারি অনলাইন ফরম পূরণ, কম্পিউটার কম্পোজসহ আধুনিক সকল ডিজিটাল সেবা অত্যন্ত নির্ভুল ও দ্রুততার সাথে প্রদান করা হয়।
+                    </p>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="https://wa.me/8801850030472?text=আসসালামু%20আলাইকুম%20হাসান%20ভাই,%20আমি%20আপনার%20ডিজিটাল%20সেন্টার%20থেকে%20একটি%20সার্ভিস%20নিতে%20চাই।" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-base shadow-lg shadow-emerald-600/25 transition-all hover:-translate-y-0.5">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>সরাসরি WhatsApp করুন</span>
+                        </a>
+                        <a href="#services" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 font-semibold text-base shadow-sm transition-all">
+                            <span>সকল সেবাসমূহ দেখুন</span>
+                            <i class="fa-solid fa-arrow-down text-sm"></i>
+                        </a>
+                    </div>
+
+                    <!-- Social Links Bar -->
+                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-slate-500 dark:text-slate-400">
+                        <span>যুক্ত থাকুন:</span>
+                        <a href="https://web.facebook.com/hasanalibd2" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 transition-colors">
+                            <i class="fa-brands fa-facebook text-blue-600 text-base"></i>
+                            <span class="font-en font-medium">Facebook</span>
+                        </a>
+                        <a href="https://github.com/hasanalibd" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:border-slate-400 transition-colors">
+                            <i class="fa-brands fa-github text-base"></i>
+                            <span class="font-en font-medium">GitHub</span>
+                        </a>
+                        <a href="tel:+8801850030472" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-emerald-600 transition-colors">
+                            <i class="fa-solid fa-phone text-emerald-600 text-sm"></i>
+                            <span class="font-en font-medium">01850-030472</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Profile Card Column -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md">
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-600 to-indigo-600 opacity-20 blur-lg"></div>
+                        <div class="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl">
+                            <!-- Profile Header -->
+                            <div class="flex flex-col items-center text-center">
+                                <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-800 flex items-center justify-center text-white text-4xl font-bold shadow-lg mb-4">
+                                    HA
+                                </div>
+                                <h2 class="text-2xl font-bold text-slate-900 dark:text-white">হাসান আলী (Hasan Ali)</h2>
+                                <p class="text-blue-600 dark:text-blue-400 font-semibold text-sm mt-1">স্বত্বাধিকারী, হাসান ডিজিটাল সেন্টার</p>
+                                <p class="text-xs font-en text-slate-500 dark:text-slate-400 mt-0.5">Computer & Online Service Specialist</p>
+                            </div>
+
+                            <!-- Quick Info Badges -->
+                            <div class="mt-6 space-y-3 border-t border-slate-100 dark:border-slate-800 pt-6">
+                                <div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                                            <i class="fa-solid fa-store"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-slate-500 dark:text-slate-400">প্রতিষ্ঠানের নাম</p>
+                                            <p class="text-sm font-semibold text-slate-900 dark:text-white">হাসান ডিজিটাল সেন্টার</p>
+                                        </div>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 text-xs font-semibold">সার্ভিস চালু</span>
+                                </div>
+
+                                <div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-slate-500 dark:text-slate-400">হোয়াটসঅ্যাপ ও কল</p>
+                                            <p class="text-sm font-en font-bold text-slate-900 dark:text-white">01850030472</p>
+                                        </div>
+                                    </div>
+                                    <button onclick="copyPhoneNumber()" class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+                                        কপি করুন
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Stats -->
+                            <div class="grid grid-cols-3 gap-2 mt-6 pt-5 border-t border-slate-100 dark:border-slate-800 text-center">
+                                <div>
+                                    <p class="text-xl font-bold text-blue-600 dark:text-blue-400">১০০%</p>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">নির্ভুল কাজ</p>
+                                </div>
+                                <div class="border-x border-slate-100 dark:border-slate-800">
+                                    <p class="text-xl font-bold text-blue-600 dark:text-blue-400">দ্রুত</p>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">অনলাইন ডেলিভারি</p>
+                                </div>
+                                <div>
+                                    <p class="text-xl font-bold text-blue-600 dark:text-blue-400">বিশ্বস্ত</p>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">ডিজিটাল সেবা</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-white dark:bg-slate-900 border-y border-slate-200/80 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-12">
+                <span class="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider">পরিচিতি ও দক্ষতা</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">আমার সম্পর্কে ও আমাদের লক্ষ্য</h2>
+                <div class="w-16 h-1.5 bg-blue-600 rounded-full mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div class="space-y-5 text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
+                    <p>
+                        আসসালামু আলাইকুম! আমি <strong class="text-slate-900 dark:text-white">হাসান আলী</strong>। প্রযুক্তির এই যুগে সাধারণ মানুষের হাতের নাগালে সকল প্রকার অনলাইন ও কম্পিউটার ভিত্তিক সেবা পৌঁছে দেওয়ার লক্ষ্য নিয়ে আমি প্রতিষ্ঠা করেছি <strong class="text-blue-600 dark:text-blue-400">হাসান ডিজিটাল সেন্টার</strong>।
+                    </p>
+                    <p>
+                        একজন কম্পিউটার প্রতিষ্ঠানের স্বত্বাধিকারী ও অনলাইন সার্ভিস বিশেষজ্ঞ হিসেবে আমি সরকারি-বেসরকারি চাকরির আবেদন, বিশ্ববিদ্যালয় ভর্তি ফরম পূরণ, জন্ম নিবন্ধন ও এনআইডি (NID) সংশোধন আবেদন, পাসপোর্ট ও ই-টিন সার্টিফিকেট থেকে শুরু করে যাবতীয় অনলাইন কাজ অত্যন্ত যত্ন ও দায়িত্বের সাথে সম্পন্ন করি।
+                    </p>
+                    <p>
+                        আপনি ঘরে বসেই WhatsApp-এর মাধ্যমে আপনার প্রয়োজনীয় ডকুমেন্ট পাঠিয়ে যেকোনো অনলাইন সেবা গ্রহণ করতে পারবেন।
+                    </p>
+                </div>
+
+                <!-- Skill Progress / Expertise Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/80">
+                        <div class="w-11 h-11 rounded-xl bg-blue-600/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-3">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-1">অনলাইন পোর্টাল এক্সপার্ট</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">যেকোনো সরকারি ও বেসরকারি ওয়েব পোর্টালে নির্ভুলভাবে আবেদন ও তথ্য এন্ট্রি।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/80">
+                        <div class="w-11 h-11 rounded-xl bg-indigo-600/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl mb-3">
+                            <i class="fa-solid fa-file-word"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-1">অফিস ও ডকুমেন্ট কাজ</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">বাংলা ও ইংরেজি টাইপিং, প্রফেশনাল সিভি (CV), এবং দলিল বা আবেদনপত্র তৈরি।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/80">
+                        <div class="w-11 h-11 rounded-xl bg-emerald-600/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-3">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-1">রিমোট ও হোয়াটসঅ্যাপ সেবা</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">দোকানে না এসেও অনলাইনে ডকুমেন্ট পাঠিয়ে দ্রুত কাজ বুঝে নেওয়ার সুবিধা।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/80">
+                        <div class="w-11 h-11 rounded-xl bg-amber-600/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl mb-3">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-1">তথ্যের শতভাগ নিরাপত্তা</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">গ্রাহকের ব্যক্তিগত কাগজপত্র ও তথ্যের সর্বোচ্চ গোপনীয়তা রক্ষা করা হয়।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-14">
+                <span class="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider">আমাদের সেবাসমূহ</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">হাসান ডিজিটাল সেন্টারের প্রধান সেবাসমূহ</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
+                    কম্পিউটার ও ইন্টারনেট ভিত্তিক যেকোনো কাজের জন্য নিচের সেবাগুলো বেছে নিন এবং সরাসরি অর্ডার করুন।
+                </p>
+            </div>
+
+            <!-- 6 Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                
+                <!-- Service 1 -->
+                <div class="group bg-white dark:bg-slate-900 rounded-3xl p-7 border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 dark:hover:border-blue-500/50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">চাকরির আবেদন ও ভর্তি ফরম পূরণ</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+                            সকল সরকারি-বেসরকারি চাকরির অনলাইন আবেদন (Teletalk ও অন্যান্য), কলেজ-বিশ্ববিদ্যালয় ভর্তি আবেদন, অ্যাডমিট কার্ড ডাউনলোড ও রেজাল্ট চেক।
+                        </p>
+                    </div>
+                    <a href="https://wa.me/8801850030472?text=আসসালামু%20আলাইকুম%20হাসান%20ভাই,%20আমি%20চাকরির%20আবেদন%20/%20ভর্তি%20ফরম%20পূরণ%20সেবাটি%20নিতে%20চাই।" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 text-slate-700 dark:text-slate-200 font-semibold text-sm transition-colors">
+                        <span>সার্ভিসটি নিতে ক্লিক করুন</span>
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group bg-white dark:bg-slate-900 rounded-3xl p-7 border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 dark:hover:border-blue-500/50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-id-card"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">এনআইডি, জন্ম নিবন্ধন ও পাসপোর্ট</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+                            নতুন ভোটার নিবন্ধন, এনআইডি কার্ড সংশোধন ও ডাউনলোড, অনলাইন জন্ম ও মৃত্যু নিবন্ধন আবেদন এবং ই-পাসপোর্ট ফরম পূরণ ও অ্যাপয়েন্টমেন্ট।
+                        </p>
+                    </div>
+                    <a href="https://wa.me/8801850030472?text=আসসালামু%20আলাইকুম%20হাসান%20ভাই,%20আমি%20এনআইডি%20/%20জন্ম%20নিবন্ধন%20/%20পাসপোর্ট%20সংক্রান্ত%20সেবাটি%20নিতে%20চাই।" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 text-slate-700 dark:text-slate-200 font-semibold text-sm transition-colors">
+                        <span>সার্ভিসটি নিতে ক্লিক করুন</span>
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group bg-white dark:bg-slate-900 rounded-3xl p-7 border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 dark:hover:border-blue-500/50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">ই-টিন, ট্রেড লাইসেন্স ও সরকারি সেবা</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+                            তাৎক্ষণিক ই-টিন (E-TIN) সার্টিফিকেট তৈরি, আয়কর রিটার্ন সহায়তা, ট্রেড লাইসেন্স আবেদন, পুলিশ ক্লিয়ারেন্স ও ভূমি/খতিয়ান সংক্রান্ত অনলাইন সেবা।
+                        </p>
+                    </div>
+                    <a href="https://wa.me/8801850030472?text=আসসালামু%20আলাইকুম%20হাসান%20ভাই,%20আমি%20ই-টিন%20/%20সরকারি%20পোর্টাল%20সেবাটি%20নিতে%20চাই।" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 text-slate-700 dark:text-slate-200 font-semibold text-sm transition-colors">
+                        <span>সার্ভিসটি নিতে ক্লিক করুন</span>
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="group bg-white dark:bg-slate-900 rounded-3xl p-7 border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 dark:hover:border-blue-500/50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-print"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">কম্পোজ, প্রফেশনাল সিভি ও প্রিন্টিং</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+                            বাংলা ও ইংরেজি নির্ভুল কম্পিউটার কম্পোজ, আকর্ষণীয় বায়োডাটা ও সিভি (CV) ডিজাইন, কালার ও সাদাকালো প্রিন্টিং, স্ক্যানিং এবং লেমিনেটিং।
+                        </p>
+                    </div>
+                    <a href="https://wa.me/8801850030472?text=আসসালামু%20আলাইকুম%20হাসান%20ভাই,%20আমি%20কম্পোজ%20/%20সিভি%20তৈরি%20সেবাটি%20নিতে%20চাই।" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 text-slate-700 dark:text-slate-200 font-semibold text-sm transition-colors">
+                        <span>সার্ভিসটি নিতে ক্লিক করুন</span>
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="group bg-white dark:bg-slate-900 rounded-3xl p-7 border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 dark:hover:border-blue-500/50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-rose-50 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">ফটো এডিটিং ও গ্রাফিক ডিজাইন</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+                            পাসপোর্ট ও স্ট্যাম্প সাইজ ছবি তৈরি, পুরাতন ছবি রিস্টোরেশন, ব্যানার, পোস্টার, ভিজিটিং কার্ড ও সোশ্যাল মিডিয়া পোস্ট ডিজাইন এবং পিডিএফ এডিটিং।
+                        </p>
+                    </div>
+                    <a href="https://wa.me/8801850030472?text=আসসালামু%20আলাইকুম%20হাসান%20ভাই,%20আমি%20ফটো%20এডিটিং%20/%20গ্রাফিক%20ডিজাইন%20সেবাটি%20নিতে%20চাই।" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 text-slate-700 dark:text-slate-200 font-semibold text-sm transition-colors">
+                        <span>সার্ভিসটি নিতে ক্লিক করুন</span>
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="group bg-white dark:bg-slate-900 rounded-3xl p-7 border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 dark:hover:border-blue-500/50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-laptop-file"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">বিল পেমেন্ট, টিকিট ও অন্যান্য সেবা</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+                            বিদ্যুৎ ও গ্যাস বিল পেমেন্ট, অনলাইন বাস-ট্রেন-বিমান টিকিট বুকিং, ইমেইল ও সোশ্যাল মিডিয়া অ্যাকাউন্ট সেটআপ এবং কম্পিউটার সফটওয়্যার সাপোর্ট।
+                        </p>
+                    </div>
+                    <a href="https://wa.me/8801850030472?text=আসসালামু%20আলাইকুম%20হাসান%20ভাই,%20আমি%20অনলাইন%20বিল%20পেমেন্ট%20/%20অন্যান্য%20সার্ভিস%20নিতে%20চাই।" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 text-slate-700 dark:text-slate-200 font-semibold text-sm transition-colors">
+                        <span>সার্ভিসটি নিতে ক্লিক করুন</span>
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-16 md:py-20 bg-gradient-to-br from-blue-900 via-slate-900 to-indigo-950 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-14">
+                <span class="text-blue-400 font-semibold text-sm uppercase tracking-wider">আমাদের বিশেষত্ব</span>
+                <h2 class="text-3xl sm:text-4xl font-bold">কেন হাসান ডিজিটাল সেন্টার থেকে সেবা নেবেন?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 text-center space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-500/20 text-blue-300 flex items-center justify-center text-2xl mx-auto">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">দ্রুত ও নির্ভুল কাজ</h3>
+                    <p class="text-sm text-slate-300">অভিজ্ঞতার সাথে প্রতিটি ফরম ও ডকুমেন্ট বারবার যাচাই করে নির্ভুলভাবে সম্পন্ন করা হয়।</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 text-center space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mx-auto">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">শতভাগ তথ্যের গোপনীয়তা</h3>
+                    <p class="text-sm text-slate-300">আপনার এনআইডি, ছবি ও ব্যক্তিগত ডকুমেন্ট সম্পূর্ণ নিরাপদ রাখা হয়।</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 text-center space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-300 flex items-center justify-center text-2xl mx-auto">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">সাশ্রয়ী সার্ভিস চার্জ</h3>
+                    <p class="text-sm text-slate-300">অতিরিক্ত কোনো চার্জ ছাড়াই ন্যায্য ও সাশ্রয়ী মূল্যে সর্বোচ্চ মানের সেবা প্রদান।</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 text-center space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-300 flex items-center justify-center text-2xl mx-auto">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">ঘরে বসেই অনলাইন সেবা</h3>
+                    <p class="text-sm text-slate-300">যেকোনো স্থান থেকে WhatsApp-এ যোগাযোগ করে কাজ করিয়ে PDF বা প্রিন্ট কপি সংগ্রহ করুন।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Quick WhatsApp Order Section -->
+    <section id="contact" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-14">
+                <span class="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider">যোগাযোগ করুন</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">যেকোনো সেবার জন্য আজই মেসেজ দিন</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
+                    নিচের ফরমটি পূরণ করে সরাসরি WhatsApp-এ মেসেজ পাঠাতে পারেন অথবা আমার সোশ্যাল মিডিয়ায় যুক্ত হতে পারেন।
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Left Contact Cards -->
+                <div class="lg:col-span-5 space-y-4">
+                    <!-- WhatsApp Direct Card -->
+                    <a href="https://wa.me/8801850030472" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-500 shadow-sm transition-all group">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold text-emerald-600 dark:text-emerald-400">সরাসরি হোয়াটসঅ্যাপ ও ফোন</p>
+                            <p class="text-lg font-en font-bold text-slate-900 dark:text-white">01850-030472</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">মেসেজ বা কল করতে ক্লিক করুন</p>
+                        </div>
+                    </a>
+
+                    <!-- Facebook Direct Card -->
+                    <a href="https://web.facebook.com/hasanalibd2" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500 shadow-sm transition-all group">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-facebook"></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <p class="text-xs font-semibold text-blue-600 dark:text-blue-400">ফেসবুক প্রোফাইল</p>
+                            <p class="text-base font-en font-bold text-slate-900 dark:text-white truncate">facebook.com/hasanalibd2</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">ফেসবুকে যুক্ত হতে ক্লিক করুন</p>
+                        </div>
+                    </a>
+
+                    <!-- GitHub Direct Card -->
+                    <a href="https://github.com/hasanalibd" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-500 shadow-sm transition-all group">
+                        <div class="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <p class="text-xs font-semibold text-slate-500 dark:text-slate-400">গিটহাব (GitHub)</p>
+                            <p class="text-base font-en font-bold text-slate-900 dark:text-white truncate">github.com/hasanalibd</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">প্রজেক্ট ও কোড দেখতে ভিজিট করুন</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Right Interactive Quick Message Form (Redirects to WhatsApp) -->
+                <div class="lg:col-span-7 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-lg">
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2">দ্রুত সার্ভিস রিকোয়েস্ট পাঠান</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">আপনার নাম ও প্রয়োজনীয় সেবার বিবরণ লিখে বাটনে ক্লিক করলে সরাসরি WhatsApp চ্যাট ওপেন হবে।</p>
+
+                    <form id="whatsapp-form" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="customer-name" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">আপনার নাম *</label>
+                                <input type="text" id="customer-name" required placeholder="আপনার পূর্ণ নাম লিখুন" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600">
+                            </div>
+
+                            <div>
+                                <label for="service-type" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">কোন সেবাটি নিতে চান?</label>
+                                <select id="service-type" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600">
+                                    <option value="চাকরির আবেদন / ভর্তি ফরম পূরণ">চাকরির আবেদন / ভর্তি ফরম পূরণ</option>
+                                    <option value="এনআইডি / জন্ম নিবন্ধন / পাসপোর্ট সেবা">এনআইডি / জন্ম নিবন্ধন / পাসপোর্ট সেবা</option>
+                                    <option value="ই-টিন / ট্রেড লাইসেন্স / সরকারি সেবা">ই-টিন / ট্রেড লাইসেন্স / সরকারি সেবা</option>
+                                    <option value="কম্পিউটার কম্পোজ / সিভি তৈরি / প্রিন্টিং">কম্পিউটার কম্পোজ / সিভি তৈরি / প্রিন্টিং</option>
+                                    <option value="ফটো এডিটিং / গ্রাফিক ডিজাইন">ফটো এডিটিং / গ্রাফিক ডিজাইন</option>
+                                    <option value="অন্যান্য অনলাইন সার্ভিস">অন্যান্য অনলাইন সার্ভিস</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="customer-message" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">কাজের সংক্ষিপ্ত বিবরণ *</label>
+                            <textarea id="customer-message" rows="3" required placeholder="আপনি কী কাজ করাতে চান তা সংক্ষেপে লিখুন..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base shadow-lg shadow-emerald-600/20 flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>WhatsApp-এ বার্তাটি পাঠান</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="text-center md:text-left">
+                <p class="font-bold text-lg text-slate-900 dark:text-white">হাসান ডিজিটাল সেন্টার (Hasan Digital Center)</p>
+                <p class="text-sm text-slate-500 dark:text-slate-400">স্বত্বাধিকারী: হাসান আলী | সকল প্রকার কম্পিউটার ও অনলাইন সেবা কেন্দ্র</p>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/8801850030472" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition-colors">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+                <a href="https://web.facebook.com/hasanalibd2" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white flex items-center justify-center transition-colors">
+                    <i class="fa-brands fa-facebook-f text-base"></i>
+                </a>
+                <a href="https://github.com/hasanalibd" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-700 hover:text-white flex items-center justify-center transition-colors">
+                    <i class="fa-brands fa-github text-lg"></i>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 pt-6 border-t border-slate-100 dark:border-slate-800/80 text-center text-xs text-slate-500 dark:text-slate-400 font-en">
+            &copy; <span id="current-year"></span> Hasan Digital Center. All rights reserved by Hasan Ali.
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/8801850030472?text=আসসালামু%20আলাইকুম%20হাসান%20ভাই,%20আমি%20একটি%20অনলাইন%20সার্ভিস%20সম্পর্কে%20জানতে%20চাই।" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white shadow-2xl shadow-emerald-600/40 flex items-center justify-center text-3xl hover:scale-110 transition-transform">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Toast Notification Box (No alert() used) -->
+    <div id="toast-box" class="fixed bottom-24 right-6 z-50 hidden px-4 py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-medium shadow-xl transition-opacity">
+        নম্বরটি কপি করা হয়েছে: 01850030472
+    </div>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Set Current Year in Footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Dark / Light Mode Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlEl = document.documentElement;
+
+        // Check saved preference or system preference
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlEl.classList.add('dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlEl.classList.toggle('dark');
+            if (htmlEl.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Copy Phone Number Function with Toast Notification
+        function copyPhoneNumber() {
+            const tempInput = document.createElement('input');
+            tempInput.value = '01850030472';
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const toast = document.getElementById('toast-box');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 2500);
+        }
+
+        // Quick WhatsApp Form Submission
+        document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('customer-name').value.trim();
+            const service = document.getElementById('service-type').value;
+            const message = document.getElementById('customer-message').value.trim();
+
+            const fullText = `আসসালামু আলাইকুম হাসান ভাই,%0A*নাম:* ${encodeURIComponent(name)}%0A*সেবার ধরন:* ${encodeURIComponent(service)}%0A*বিস্তারিত:* ${encodeURIComponent(message)}`;
+            const whatsappUrl = `https://wa.me/8801850030472?text=${fullText}`;
+            
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        });
+    </script>
+</body>
+</html>
